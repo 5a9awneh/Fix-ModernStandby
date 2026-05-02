@@ -1,7 +1,7 @@
 # Fix-ModernStandby
 
 <!-- BADGES:START -->
-[![License](https://img.shields.io/github/license/5a9awneh/Fix-ModernStandby)](LICENSE) [![PowerShell](https://img.shields.io/badge/PowerShell-5391FE?logo=powershell&logoColor=white)](https://learn.microsoft.com/en-us/powershell/) [![Windows](https://img.shields.io/badge/Windows-0078D6?logo=windows&logoColor=white)](https://www.microsoft.com/windows) [![Last Commit](https://img.shields.io/github/last-commit/5a9awneh/Fix-ModernStandby)](https://github.com/5a9awneh/Fix-ModernStandby/commits/master) [<img src="https://madebyhuman.iamjarl.com/badges/loop-white.svg" alt="Human in the Loop" height="20">](https://madebyhuman.iamjarl.com)
+[![License](https://img.shields.io/github/license/5a9awneh/Fix-ModernStandby)](LICENSE) [![PowerShell](https://img.shields.io/badge/PowerShell-5391FE?logo=powershell&logoColor=white)](https://learn.microsoft.com/en-us/powershell/) [![Windows](https://img.shields.io/badge/Windows-0078D6?logo=windows&logoColor=white)](https://www.microsoft.com/windows) [![Last Commit](https://img.shields.io/github/last-commit/5a9awneh/Fix-ModernStandby)](https://github.com/5a9awneh/Fix-ModernStandby/commits/master) [![Human in the Loop](https://img.shields.io/badge/human--in--the--loop-%E2%9C%93-brightgreen?style=flat)](https://github.com/5a9awneh/Fix-ModernStandby)
 <!-- BADGES:END -->
 
 Fixes excessive battery drain during Modern Standby (S0) on Windows 11 laptops. Disables the three root-cause settings responsible for the device staying active instead of entering a low-power state when the lid is closed. Includes a two-stage diagnostic tool to verify the fix overnight.
