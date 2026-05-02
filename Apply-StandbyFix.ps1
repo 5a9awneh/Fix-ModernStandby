@@ -56,7 +56,8 @@ reg add "HKLM\SYSTEM\CurrentControlSet\Control\Session Manager\Power" /v Hiberbo
 if ($LASTEXITCODE -ne 0) {
     Write-Warning "  (2) HiberbootEnabled reg add failed with error $LASTEXITCODE"
     $success = $false
-} else {
+}
+else {
     Write-Host "  Done." -ForegroundColor Green
 }
 
@@ -98,7 +99,8 @@ if ($success) {
     Write-Host "=======================================" -ForegroundColor Green
     Write-Host "  All three settings applied." -ForegroundColor Green
     Write-Host "=======================================" -ForegroundColor Green
-} else {
+}
+else {
     Write-Host "=======================================" -ForegroundColor Yellow
     Write-Host "  Completed with warnings - review above" -ForegroundColor Yellow
     Write-Host "=======================================" -ForegroundColor Yellow
