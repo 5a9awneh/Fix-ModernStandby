@@ -3,9 +3,6 @@
 $ErrorActionPreference = "Continue"
 
 $reportsDir = Join-Path $PSScriptRoot "reports"
-if (-not (Test-Path $reportsDir)) {
-    New-Item -ItemType Directory -Path $reportsDir | Out-Null
-}
 
 Write-Host ""
 Write-Host "============================================================" -ForegroundColor Cyan
@@ -49,6 +46,10 @@ Write-Host "============================================================" -Foreg
 Write-Host "  STEP 2 OF 2 - Generating SleepStudy Report..." -ForegroundColor Cyan
 Write-Host "============================================================" -ForegroundColor Cyan
 Write-Host ""
+
+if (-not (Test-Path $reportsDir)) {
+    New-Item -ItemType Directory -Path $reportsDir | Out-Null
+}
 
 $reportPath = Join-Path $reportsDir "sleepstudy_report.html"
 powercfg /sleepstudy /output "$reportPath"

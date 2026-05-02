@@ -1,7 +1,7 @@
 # Fix-ModernStandby
 
 <!-- BADGES:START -->
-[![License](https://img.shields.io/github/license/5a9awneh/Fix-ModernStandby)](LICENSE) [![PowerShell](https://img.shields.io/badge/PowerShell-5391FE?logo=powershell&logoColor=white)](https://learn.microsoft.com/en-us/powershell/) [![Windows](https://img.shields.io/badge/Windows-0078D6?logo=windows&logoColor=white)](https://www.microsoft.com/windows) [![Last Commit](https://img.shields.io/github/last-commit/5a9awneh/Fix-ModernStandby)](https://github.com/5a9awneh/Fix-ModernStandby/commits/main) [<img src="https://madebyhuman.iamjarl.com/badges/loop-white.svg" alt="Human in the Loop" height="20">](https://madebyhuman.iamjarl.com)
+[![License](https://img.shields.io/github/license/5a9awneh/Fix-ModernStandby)](LICENSE) [![PowerShell](https://img.shields.io/badge/PowerShell-5391FE?logo=powershell&logoColor=white)](https://learn.microsoft.com/en-us/powershell/) [![Windows](https://img.shields.io/badge/Windows-0078D6?logo=windows&logoColor=white)](https://www.microsoft.com/windows) [![Last Commit](https://img.shields.io/github/last-commit/5a9awneh/Fix-ModernStandby)](https://github.com/5a9awneh/Fix-ModernStandby/commits/master) [<img src="https://madebyhuman.iamjarl.com/badges/loop-white.svg" alt="Human in the Loop" height="20">](https://madebyhuman.iamjarl.com)
 <!-- BADGES:END -->
 
 Fixes excessive battery drain during Modern Standby (S0) on Windows 11 laptops. Disables the three root-cause settings responsible for the device staying active instead of entering a low-power state when the lid is closed. Includes a two-stage diagnostic tool to verify the fix overnight.
@@ -28,12 +28,12 @@ Tested on Lenovo ThinkPad P16s Gen 3 (Windows 11). Applicable to any Modern Stan
 
 ### Step 2 — Verify overnight (optional but recommended)
 
-1. The evening after rebooting, double-click **`TEST.bat``**
+1. The evening after rebooting, double-click **`TEST.bat`**
 2. Review the active power requests shown — no `[System]` or `[Display]` entries means the device is ready to sleep correctly
 3. Close the lid and leave the device overnight
 4. The next morning, wake the device — the same console window will be waiting
 5. Press **Enter** to generate the SleepStudy HTML report
-6. The report opens automatically from the `reports\` folder
+6. The report opens automatically in your browser
 
 ---
 

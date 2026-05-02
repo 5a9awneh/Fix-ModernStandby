@@ -65,25 +65,30 @@ if ($LASTEXITCODE -ne 0) {
 # ============================================================
 Write-Host "[3/3] Disabling Allow Wake Timers..." -ForegroundColor Cyan
 
+$step3Success = $true
+
 powercfg /setacvalueindex SCHEME_CURRENT SUB_SLEEP RTCWAKE 0 | Out-Null
 if ($LASTEXITCODE -ne 0) {
     Write-Warning "  (3a) setacvalueindex RTCWAKE failed with error $LASTEXITCODE"
     $success = $false
+    $step3Success = $false
 }
 
 powercfg /setdcvalueindex SCHEME_CURRENT SUB_SLEEP RTCWAKE 0 | Out-Null
 if ($LASTEXITCODE -ne 0) {
     Write-Warning "  (3b) setdcvalueindex RTCWAKE failed with error $LASTEXITCODE"
     $success = $false
+    $step3Success = $false
 }
 
 # Apply all changes to the active power scheme
 powercfg /setactive SCHEME_CURRENT | Out-Null
 if ($LASTEXITCODE -ne 0) {
     Write-Warning "  setactive SCHEME_CURRENT failed with error $LASTEXITCODE"
+    $step3Success = $false
 }
 
-if ($success) { Write-Host "  Done." -ForegroundColor Green }
+if ($step3Success) { Write-Host "  Done." -ForegroundColor Green }
 
 # ============================================================
 # Summary
