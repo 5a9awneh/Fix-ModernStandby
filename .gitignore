@@ -1,0 +1,15 @@
+# SleepStudy reports (generated at runtime)
+reports/
+
+# OS artifacts
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE artifacts
+.vscode/
+
+# Temp / backup files
+*.tmp
+*.bak
+*.orig
