@@ -8,6 +8,67 @@ Fixes excessive battery drain during Modern Standby (S0) on Windows 11 laptops. 
 
 Tested on Lenovo ThinkPad P16s Gen 3 (Windows 11). Applicable to any Modern Standby-capable laptop exhibiting the same behaviour.
 
+**`powercfg /requests` — before fix *(representative)* — device stays active during standby:**
+
+```
+DISPLAY:
+[SERVICE] Windows Push Notifications System Service
+
+SYSTEM:
+[SERVICE] Connected Standby (svchost.exe - NcbService)
+
+AWAYMODE:
+None.
+
+EXECUTION:
+[PROCESS] svchost.exe (TimeBrokerSvc)
+
+PERFBOOST:
+None.
+
+ACTIVELOCKSCREEN:
+None.
+```
+
+**`powercfg /requests` — after fix + reboot — device ready to sleep:**
+
+```
+DISPLAY:
+None.
+
+SYSTEM:
+None.
+
+AWAYMODE:
+None.
+
+EXECUTION:
+None.
+
+PERFBOOST:
+None.
+
+ACTIVELOCKSCREEN:
+None.
+```
+
+```mermaid
+flowchart TD
+    A([Start]) --> B[Double-click RUN.bat]
+    B --> C{Type YES to confirm?}
+    C -- No --> D([Aborted — no changes made])
+    C -- Yes --> E[Apply 3 power settings\nNetworking in Standby · Fast Startup · Wake Timers]
+    E --> F[Reboot device]
+    F --> G[Evening: double-click TEST.bat]
+    G --> H[Review powercfg /requests\nNo System or Display entries = ready to sleep]
+    H --> I[Close lid — leave overnight]
+    I --> J[Morning: press Enter in the same window]
+    J --> K[SleepStudy HTML report generated\nopens automatically in browser]
+    K --> L{DRIPS ≥ 80%\nDrain < 0.33%/hr?}
+    L -- Yes --> M([Fix confirmed working ✓])
+    L -- No --> N([Review top offenders in report\ndriver/firmware issue likely])
+```
+
 ---
 
 ## ⚙️ Requirements
