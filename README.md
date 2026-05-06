@@ -67,6 +67,10 @@ flowchart TD
     K --> L{DRIPS ≥ 80%\nDrain < 0.33%/hr?}
     L -- Yes --> M([Fix confirmed working ✓])
     L -- No --> N([Review top offenders in report\ndriver/firmware issue likely])
+    classDef success fill:#2d6a2d,color:#fff,stroke:#1a3d1a
+    classDef warning fill:#7a5500,color:#fff,stroke:#4d3600
+    class M success
+    class D,N warning
 ```
 
 ---
